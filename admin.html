@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Bracelet Boutique</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        Admin Page - Add New Item
+    </header>
+
+    <div class="container">
+        <div class="admin-panel">
+            <h3>Upload Image and Generate Unique ID</h3>
+            <form id="imageForm">
+                <label>Select Image:</label>
+                <input type="file" id="itemImage"><br>
+                <button type="button" onclick="generateUniqueID()">Generate ID & Save</button>
+            </form>
+            <p id="uniqueIdDisplay"></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Bracelet Boutique - Handmade with Love
+    </footer>
+
+    <script>
+        function generateUniqueID() {
+            const fileInput = document.getElementById('itemImage');
+            if (fileInput.files.length === 0) {
+                alert("Please select an image to upload.");
+                return;
+            }
+
+            // Generate a unique ID
+            const uniqueId = 'BRAC-' + Math.random().toString(36).substring(2, 10).toUpperCase();
+            
+            // Display the generated ID
+            document.getElementById('uniqueIdDisplay').innerText = 'Generated ID: ' + uniqueId;
+            
+            // Save the ID (you can also store this in a database if needed)
+            console.log('Image:', fileInput.files[0]);
+            console.log('Generated ID:', uniqueId);
+
+            alert('Item saved with ID: ' + uniqueId);
+        }
+    </script>
+</body>
+</html>

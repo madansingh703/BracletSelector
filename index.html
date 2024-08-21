@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bracelet Boutique - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        Welcome to Bracelet Boutique
+    </header>
+    <div class="container">
+
+        <!-- Admin Button -->
+        <div class="admin-button-container">
+            <button id="adminButton" onclick="showAdminLogin()">Admin</button>
+        </div>
+
+        <!-- Admin Login Form -->
+        <div id="adminLogin" class="admin-login-container" style="display: none;">
+            <h3>Admin Login</h3>
+            <label>User ID: </label>
+            <input type="text" id="adminUserId" placeholder="Enter User ID"><br>
+            <label>Password: </label>
+            <input type="password" id="adminPassword" placeholder="Enter Password"><br>
+            <button onclick="validateAdmin()">Login</button>
+        </div>
+
+        <!-- Rest of the HTML code remains the same... -->
+
+    </div>
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Filter and Sort Section -->
+        <div class="filter-sort-container">
+            <div class="filter-container">
+                <h3>Filter By:</h3>
+                <form id="filterForm">
+                    <label>
+                        Category:
+                        <select id="categoryFilter">
+                            <option value="">All</option>
+                            <option value="beaded">Beaded Bracelets</option>
+                            <option value="string">String Bracelets</option>
+                            <option value="leather">Leather Bracelets</option>
+                            <option value="macrame">Macrame Bracelets</option>
+                            <option value="chain">Chain Bracelets</option>
+                            <option value="charm">Charm Bracelets</option>
+                            <option value="friendship">Friendship Bracelets</option>
+                            <option value="wire-wrapped">Wire-Wrapped Bracelets</option>
+                            <option value="stretch">Stretch Bracelets</option>
+                            <option value="cuff">Cuff Bracelets</option>
+                        </select>
+                    </label>
+                    <label>
+                        Price Range:
+                        <input type="number" id="minPrice" placeholder="Min Price">
+                        <input type="number" id="maxPrice" placeholder="Max Price">
+                    </label>
+                    <label>
+                        Number of Beads:
+                        <input type="number" id="numBeads" placeholder="Number of Beads">
+                    </label>
+                    <label>
+                        Material:
+                        <select id="materialFilter">
+                            <option value="">All</option>
+                            <option value="embroidery_floss">Embroidery Floss</option>
+                            <option value="nylon_thread">Nylon Thread</option>
+                            <option value="silk_thread">Silk Thread</option>
+                            <option value="waxed_cotton_thread">Waxed Cotton Thread</option>
+                            <option value="polyester_thread">Polyester Thread</option>
+                            <option value="metallic_thread">Metallic Thread</option>
+                            <option value="hemp_thread">Hemp Thread</option>
+                            <option value="leather_cord">Leather Cord</option>
+                            <option value="faux_leather_cord">Faux Leather Cord</option>
+                            <option value="suede_cord">Suede Cord</option>
+                            <option value="cotton_cord">Cotton Cord</option>
+                            <option value="waxed_cord">Waxed Cord</option>
+                            <option value="hemp_cord">Hemp Cord</option>
+                            <option value="nylon_cord">Nylon Cord</option>
+                            <option value="elastic_cord">Elastic Cord</option>
+                            <option value="satin_cord">Satin Cord (Rattail Cord)</option>
+                            <option value="paracord">Paracord</option>
+                        </select>
+                    </label>
+                    <button type="button" onclick="applyFilters()">Apply Filters</button>
+                </form>
+            </div>
+
+            <div class="sort-container">
+                <h3>Sort By:</h3>
+                <form id="sortForm">
+                    <label>
+                        <select id="sortBy">
+                            <option value="priceAsc">Price: Low to High</option>
+                            <option value="priceDesc">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                        </select>
+                    </label>
+                    <button type="button" onclick="applySort()">Sort</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Product List Section -->
+        <div class="product-list">
+            <h3>Products:</h3>
+            <div id="productContainer"></div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Bracelet Boutique - Handmade with Love
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
